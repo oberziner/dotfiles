@@ -27,6 +27,8 @@ alias gdc='git diff --cached'
 #Bash history configs
 #Avoid duplicates
 export HISTCONTROL=ignoredups:erasedups
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
 #When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
 
