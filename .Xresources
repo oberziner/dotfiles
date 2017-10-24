@@ -38,4 +38,4 @@ URxvt.saveLines: 8192
 *color15:                 #fdf6e3
 
 #Enable changing fonts on the fly
-urxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed
+urxvt.perl-ext-common: default,matcher,resize-font
