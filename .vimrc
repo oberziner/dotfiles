@@ -44,6 +44,22 @@ set shiftwidth=4
 "Copy indent from current line when starting a new line
 set autoindent
 
+" JS indent
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+
+"--------------------
+
+"CtrlP config
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+"vim-jsbeautify config
+map <c-f> :call JsBeautify()<cr>
+
+
+"Enhances :find
+set path+=**
+
 "The Silver Searcher (https://github.com/ggreer/the_silver_searcher)
 if executable('ag')
   " Use ag over grep
@@ -55,3 +71,17 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+"Changes highlight for string
+hi link String Directory
+
+"TESTS fro JAVA plugin
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+let g:JavaComplete_ClasspathGenerationOrder = ['Gradle', 'Eclipse', 'Maven']
+
+
+let g:jsx_ext_required = 0
+:set enc=utf-8
