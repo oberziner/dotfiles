@@ -47,6 +47,12 @@ set autoindent
 " JS indent
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
+" JSON indent
+autocmd FileType json setlocal shiftwidth=2 tabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
+
+"Remap Q to run last used macro
+nnoremap Q @@
 
 "--------------------
 
