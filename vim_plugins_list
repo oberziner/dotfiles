@@ -1,5 +1,6 @@
 39f06b873a8449af8ff6a3eee716d3da14d63a76 git://github.com/jiangmiao/auto-pairs.git
 2e773fd8c7548526853fff6ee2e642eafbbe3d04 https://github.com/ctrlpvim/ctrlp.vim.git
+10b3746ecb52064d44bbcb1fdf6b21cca551f30c https://github.com/mattn/emmet-vim.git
 cba0e0684546e719ee27fee013083b888be8f344 https://github.com/AndrewRadev/linediff.vim
 e671e403dd1ec1da59f70605c73aaedb6cb0e637 https://github.com/scrooloose/nerdtree.git
 7704fac2c765aaf975ad4034933bf63113dd4a64 https://github.com/leafgarland/typescript-vim.git

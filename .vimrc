@@ -1,5 +1,3 @@
-"Plugins installed:
-" Pathogen - https://github.com/tpope/vim-pathogen
 " NERDTree - https://github.com/scrooloose/nerdtree.git
 " Solarized - https://github.com/altercation/vim-colors-solarized.git
 " fugitive.vim - https://github.com/tpope/vim-fugitive.git
@@ -46,6 +44,8 @@ set autoindent
 
 " JS indent
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
 
 " JSON indent
 autocmd FileType json setlocal shiftwidth=2 tabstop=2
@@ -91,3 +91,5 @@ let g:JavaComplete_ClasspathGenerationOrder = ['Gradle', 'Eclipse', 'Maven']
 
 let g:jsx_ext_required = 0
 :set enc=utf-8
+
+let g:user_emmet_leader_key='<Tab>'
