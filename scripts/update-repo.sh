@@ -19,3 +19,4 @@ cp -v ~/.bashrc .bashrc
 cp -v ~/.vimrc .vimrc
 cp -v ~/.xinitrc .xinitrc
 cp -v ~/.Xresources .Xresources
+cp -v ~/.tmux.conf .tmux.conf
