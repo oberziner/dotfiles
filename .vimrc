@@ -78,7 +78,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap K :grep! ":*\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "Changes highlight for string
 hi link String Directory
@@ -93,3 +93,26 @@ let g:jsx_ext_required = 0
 :set enc=utf-8
 
 let g:user_emmet_leader_key='<Tab>'
+
+"vim-slime config
+
+let g:slime_target = "tmux"
+
+"vim-slime config end
+
+"Send to repl
+"nmap <Tab><Tab> :w<CR> :silent !tmux send-keys -t \%12 "(load-file \"%\")" Enter<CR>:redraw!<CR>
+"
+function GrepWithClojureKeyWord(word)
+    if a:word =~ '^:'
+        silent execute "grep! '" . a:word . "\\b'"
+        copen
+        redraw!
+    else
+        silent execute "grep! '\\b" . a:word . "\\b'"
+        copen
+        redraw!
+    end
+endfunction
+
+nnoremap K :call GrepWithClojureKeyWord('<C-R><C-W>')<cr>
