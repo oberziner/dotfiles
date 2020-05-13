@@ -44,6 +44,7 @@ set autoindent
 
 " JS indent
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 
@@ -53,6 +54,9 @@ autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
 
 "Remap Q to run last used macro
 nnoremap Q @@
+
+"Map <Tab><Tab> to save file
+map <Tab><Tab> :w<CR>
 
 "--------------------
 
