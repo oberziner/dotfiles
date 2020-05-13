@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-expectedRepoAddress="https://github.com/oberziner/dotfiles.git"
+expectedRepoAddress="git@github.com:oberziner/dotfiles.git"
 actualRepoAddress=$(git remote -v show 2>&1 | grep fetch | cut -f2 | cut -f1 -d " ")
 if [ ! -d ".git" ]; then
     echo "Not a Git Repo. This script must be executed from Git repo root"

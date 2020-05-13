@@ -34,3 +34,6 @@ shopt -s histappend
 
 #Changes prompt string
 PS1='[\u@\h \W]\$ '
+
+alias vimps='ps maux | awk '\''NR>1 {$6=$6/1024"M";}{ print;}'\'' | grep vim'
+alias javaps='ps maux | awk '\''NR>1 {$6=$6/1024"M";}{ print;}'\'' | grep java | cut -c 1-200'
