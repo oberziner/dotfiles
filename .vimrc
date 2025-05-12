@@ -12,7 +12,7 @@ syntax on
 filetype plugin indent on
 
 "Colorscheme to solarized dark
-set background=dark
+set background=light
 colorscheme solarized
 
 "Highlights current line
@@ -25,6 +25,9 @@ set ruler
 set showcmd
 "Show possible completions above command line
 set wildmenu
+
+"set vertical diff
+set diffopt+=vertical
 
 "Enable scrolling and resizing with mouse
 set mouse=a
@@ -97,3 +100,49 @@ let g:jsx_ext_required = 0
 :set enc=utf-8
 
 let g:user_emmet_leader_key='<Tab>'
+
+" coc
+
+set encoding=utf-8
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use <c-space> to trigger completion
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Formatting selected code
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap keys for applying code actions at the cursor position
+nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+
+" Remap keys for applying refactor code actions
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+
+" Use K to show documentation in preview window
+nnoremap <silent> gk :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
